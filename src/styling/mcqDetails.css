@@ -1,0 +1,39 @@
+.mcqDetailMainbody {
+  display: flex;
+  width: 1005px;
+  align-items: center;
+  gap: 8px;
+}
+
+.mcqId {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  background: var(--primary, #10baac);
+}
+
+.mcqInputBody {
+  display: flex;
+  height: 42px;
+  padding: 11px 12px;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 4px;
+  border: 1px solid var(--form-11, #ebeaed);
+  background: var(--Form-1, #fbfafc);
+}
+
+.mcqCrossIcon {
+  display: flex;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--white, #fff);
+  background: #f04b61;
+}

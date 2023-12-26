@@ -1,0 +1,30 @@
+.stepperMainbody{
+    display: flex;
+width: 156px;
+align-items: center;
+gap: 8px;
+}
+
+
+.iconStepper {
+  display: flex;
+  height: 34px;
+  width: 34px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 48px;
+  background: var(--Neutral-100, #f1f5f9);
+  border: none;
+}
+.incrementInput {
+  display: flex;
+  height: 34px;
+  padding: 5px 20px 5px 6px;
+  align-items: center;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid var(--Neutral-400, #94a3b8);
+  background: var(--Basic-White, #fff);
+}
