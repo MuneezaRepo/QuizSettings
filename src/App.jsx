@@ -9,10 +9,6 @@ import Header from "./component/Header";
 import { useEffect, useState } from "react";
 import MCQDetails from "./component/MCQDetails.jsx";
 
-const router = createBrowserRouter([
-  {path: '/', element: <CreatingQuiz />},
-  {path: '/addingQuestions', element: <MCQDetails />}
-])
 
 const App = () => {
   const [quiz, setQuiz] = useState({
@@ -25,6 +21,12 @@ const App = () => {
   useEffect(() => {
     console.log("from app", quiz);
   }, [quiz]);
+
+  const router = createBrowserRouter([
+    {path: '/', element: <CreatingQuiz  quiz={quiz} setQuiz={setQuiz} />},
+    {path: '/addingQuestions', element: <MCQDetails />}
+  ])
+  
 
   return (
     <>

@@ -3,7 +3,7 @@ import "../styling/shuffleSettingsDropdown.css";
 import CheckBoxComponent from "./CheckBoxComponent";
 import RadioButtonComponent from "./RadioButtonComponent";
 
-const FeedbackSettingsDropdown = ({ checkboxesProp, setQuiz, quiz, text }) => {
+const FeedbackSettingsDropdown = ({ checkboxesProp, setQuiz, quiz, text  }) => {
   const handleRadioButton = (selectedText) => {
     text.map((nn) => {
       setQuiz((pre) => {
@@ -25,7 +25,7 @@ const FeedbackSettingsDropdown = ({ checkboxesProp, setQuiz, quiz, text }) => {
   };
 
   return (
-    <div>
+    <div style={{paddingBottom:'10px'}}>
       <CheckBoxComponent
         constumStyle="customBackground"
         text={checkboxesProp}

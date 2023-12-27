@@ -10,8 +10,9 @@ const AttemptSettingsComponent = ({ checkboxesProp, setQuiz, quiz }) => {
   };
 
   return (
-    <div>
+    <div style={{paddingBottom:'10px'}}>
       <CheckBoxComponent
+       constumStyle="customBackground"
         text={checkboxesProp}
         handleuffel={handleuffel}
         componentAsProp={[
@@ -28,7 +29,7 @@ const AttemptSettingsComponent = ({ checkboxesProp, setQuiz, quiz }) => {
           />,
 
           <CheckBoxComponent
-            constumStyle="custom-style"
+            // constumStyle="custom-style"
             text={"chking dropdown"}
             handleuffel={handleuffel}
             setQuiz={setQuiz}

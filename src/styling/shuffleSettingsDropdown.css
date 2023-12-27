@@ -18,9 +18,10 @@
 } */
 
 .customBackground{
-  background-color:#185fa7 ;
+  background-color:#F9FAFB ;
 /* height: 44px; */
-padding: 10px;
+/* padding: 10px; */
+padding:20px 0px;
 gap: 10px;
 margin-bottom: 10px !important;
 

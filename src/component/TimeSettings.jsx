@@ -28,7 +28,7 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
     });
   };
   return (
-    <>
+    <div  style={{paddingBottom:'10px'}}>
       <div>
         <RadioButtonComponent
           text={text}
@@ -47,6 +47,7 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
       
       
       <CheckBoxComponent
+       constumStyle="customBackground"
         text={checkboxesProp}
         handleuffel={handleuffel}
         componentAsProp={
@@ -56,7 +57,7 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
           />
         }
       />
-    </>
+    </div>
   );
 };
 
