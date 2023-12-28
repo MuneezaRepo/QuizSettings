@@ -24,17 +24,18 @@ const AttemptSettingsComponent = ({ checkboxesProp, setQuiz, quiz }) => {
               "Matching",
               "Easy Question",
             ]}
+            label="Quiz Score to keep"
             setQuiz={setQuiz}
             quiz={setQuiz}
           />,
 
           <CheckBoxComponent
-            // constumStyle="custom-style"
+            constumStyle="custom-style"
             text={"chking dropdown"}
             handleuffel={handleuffel}
             setQuiz={setQuiz}
             componentAsProp={<Stepper setQuiz={setQuiz} />}
-          />,
+          />
         ]}
       />
     </div>

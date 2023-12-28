@@ -39,7 +39,7 @@ const DownArrow = () => (
   </svg>
 );
 
-const ASDropdown = ({ quiz, setQuiz, options }) => {
+const ASDropdown = ({ quiz, setQuiz, options,label }) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [showOption, setShowOptions] = useState(false);
 
@@ -55,8 +55,8 @@ const ASDropdown = ({ quiz, setQuiz, options }) => {
   };
 
   return (
-    <div>
-      <label htmlFor="options">Quiz Score to keep</label>
+    <div >
+      <label htmlFor="options">{label}</label>
       <div style={{ display: "flex", flexDirection: "row-reverse" }}>
         <div
           id="options"

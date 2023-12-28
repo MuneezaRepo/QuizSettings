@@ -30,7 +30,7 @@ const App = () => {
 
   return (
     <>
-    <RouterProvider router={router}/>;
+    <RouterProvider router={router}/>
     
         {/* <Header setQuiz /> */}
         {/* <CreatingQuiz quiz={quiz} setQuiz={setQuiz} /> */}

@@ -1,6 +1,6 @@
 .mcqDetailMainbody {
   display: flex;
-  width: 1005px;
+  width: 100%;
   align-items: center;
   gap: 8px;
 }
@@ -14,11 +14,12 @@
   gap: 10px;
   border-radius: 4px;
   background: var(--primary, #10baac);
+  height: 32px;
 }
 
 .mcqInputBody {
   display: flex;
-  height: 42px;
+  height: 32px;
   padding: 11px 12px;
   align-items: flex-start;
   gap: 10px;
@@ -36,4 +37,37 @@
   border-radius: 6px;
   border: 1px solid var(--white, #fff);
   background: #f04b61;
+  height: 50px;
+}
+.crossIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.dotted-button {
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  border-radius: 6px;
+  border: 1px dashed var(--primary, #10baac);
+  background: var(--Neutral-50, #f8fafc);
+}
+
+.dotted-button:hover {
+  border-color: #666; /* Change color on hover */
+}
+
+.dottedButtonText {
+  color: var(--primary, #10baac);
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
 }
