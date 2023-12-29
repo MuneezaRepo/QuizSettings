@@ -1,0 +1,40 @@
+.buttonDifficultyContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.buttonDifficulty {
+  width: 100px;
+  height: 29px;
+  border-radius: 7.206px;
+
+  border: none;
+}
+
+.buttonDifficultyText {
+  left: 40px;
+  top: 5px;
+
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+
+  font-family: Work Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.4px;
+}
+.buttonEasy {
+  background: #10baac;
+  color: var(--white, #fff);
+}
+.buttonMedium {
+    
+  background: var(--accent, rgb(223, 184, 126));
+  color: var(--accent, rgb(56, 38, 12));
+}
+.buttonHard {
+  background: var(--accent, #b47673);
+  color: var(--accent, #ff2116);
+}

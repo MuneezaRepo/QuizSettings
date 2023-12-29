@@ -27,6 +27,13 @@ const AttemptSettingsComponent = ({ checkboxesProp, setQuiz, quiz }) => {
             label="Quiz Score to keep"
             setQuiz={setQuiz}
             quiz={setQuiz}
+            selectedOptionField = "dropdownField"
+            dropdownOptionsList = "dropdownList"
+            dropdownInsideContent = "insideDropdownListContent"
+            basicStyle="basicStyle"
+
+
+
           />,
 
           <CheckBoxComponent

@@ -6,6 +6,18 @@ export const createQuiz=createAsyncThunk('createQuiz',async(payload,thunkApi)=>{
   return payload
 })
 
+export const createMCQ=createAsyncThunk('createMCQ',async(payload,thunkApi)=>{
+  console.log('i am in createMCQ',payload)
+  localStorage.setItem('addMCQ',JSON.stringify(payload))
+  return payload
+})
+
+export const createAllMCQ=createAsyncThunk('createAllMCQ',async(payload,thunkApi)=>{
+  console.log('i am in createMCQ',payload)
+  localStorage.setItem('addAllMCQ',JSON.stringify(payload))
+  return payload
+})
+
 
 export const getQuiz=createAsyncThunk('getQuiz',async(thunkApi)=>{
   
@@ -14,12 +26,10 @@ export const getQuiz=createAsyncThunk('getQuiz',async(thunkApi)=>{
   return respone
 })
 const initialState = {
-  tabIndex: 0,
   quiz:{},
-  checkboxes: {
-    shuffleValue: false,
-    attemptValue: false
-  }, 
+  addMCQ:{},
+  allMCQs:[],
+ 
 };
 
 const reducerSlice = createSlice({
@@ -29,31 +39,19 @@ const reducerSlice = createSlice({
     setQUizstate(state=initialState,action){
       state.quiz = action.payload;
     },
-
-    setTabIndex(state, action) {
-      state.tabIndex = action.payload;
-    },
-    updateCheckbox(state=initialState, action) {
-      state.checkboxes = action.payload;
-  
-
-    },
-    
-    saveUserData(state, action) {
-      console.log('User Data:', action.payload);
-      console.log('state.log',state);
-      return { ...state, userData: action.payload };
-    },
-   
   },
   extraReducers(builder){
     builder.addCase(createQuiz.fulfilled,(state,action)=>{
       state.quiz=action.payload
     }).addCase(getQuiz.fulfilled,(state,action)=>{
       state.quiz=action.payload
+    }).addCase(createMCQ.fulfilled,(state,action)=>{
+      state.addMCQ=action.payload
+    }).addCase(createAllMCQ.fulfilled,(state,action)=>{
+      state.allMCQs=action.payload
     })
   }
 });
-export const {setTabIndex,saveUserData,setQUizstate,updateCheckbox} = reducerSlice.actions;
+export const {setQUizstate} = reducerSlice.actions;
 export default reducerSlice.reducer;
 

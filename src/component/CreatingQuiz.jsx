@@ -9,14 +9,14 @@ import ShuffleSettingsDropdown from "./ShuffleSettingsDropdown";
 import FeedbackSettingsDropdown from "./FeedbackSettingsDropdown";
 import AttemptSettingsComponent from "./AttemptSettingsComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { createQuiz, getQuiz, setQUizstate, setTabIndex } from "../store/reducerSlice";
+import { createQuiz, getQuiz, setQUizstate} from "../store/reducerSlice";
 import TimeSettings from "./TimeSettings";
 import MCQDetails from "./MCQDetails";
 
 import { Link ,useNavigate } from 'react-router-dom';
 
 
-const CreatingQuiz = ( {quiz, setQuiz ,setTabIndex}) => {
+const CreatingQuiz = ( {quiz, setQuiz }) => {
   
   const ahdjkl = useSelector((state) => state.myReducer.quiz);
   console.log(ahdjkl, "ahdjkl");

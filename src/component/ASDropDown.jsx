@@ -39,31 +39,45 @@ const DownArrow = () => (
   </svg>
 );
 
-const ASDropdown = ({ quiz, setQuiz, options,label }) => {
+const ASDropdown = ({onOptionChange, quiz, setQuiz, options,label,selectedOptionField ,dropdownOptionsList,dropdownInsideContent,basicStyle}) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [showOption, setShowOptions] = useState(false);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setShowOptions(false);
+    // onOptionChange(option);
 
     
-    setQuiz((prevQuiz) => ({
-      ...prevQuiz,
-      selectedOption: option, 
-    }));
+    // setQuiz((prevQuiz) => ({
+    //   ...prevQuiz,
+    //   selectedOption: option, 
+    // }));
+    if (onOptionChange) {
+      onOptionChange(option);
+    } else {
+      setQuiz((prevQuiz) => ({
+        ...prevQuiz,
+        selectedOption: option
+      }));
+    }
+
+
+
   };
 
   return (
     <div >
       <label htmlFor="options">{label}</label>
-      <div style={{ display: "flex", flexDirection: "row-reverse" }}>
+      <div  className={basicStyle}>
+       
         <div
           id="options"
           onClick={() => {
             setShowOptions((pre) => !pre);
           }}
-          className="dropdownField"
+          // className="dropdownField"
+           className={selectedOptionField}
         >
           <div style={{ padding: "5px" }}>{selectedOption}</div>
           <div style={{ padding: "5px" }}>
@@ -72,11 +86,13 @@ const ASDropdown = ({ quiz, setQuiz, options,label }) => {
         </div>
 
         {showOption && (
-          <div className="dropdownList">
+          <div  className={dropdownOptionsList}>
+            {/* className="dropdownList"*/}
             {options.map((option) => (
               <div
                 key={option} // Assign a unique key to each option
-                className="insideDropdownListContent"
+                // className="insideDropdownListContent"
+                className={dropdownInsideContent}
                 onClick={() => {
                   handleOptionClick(option);
                   setShowOptions(false);

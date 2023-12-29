@@ -29,7 +29,6 @@ padding: 10px;
 border-radius: 6px;
 border: 1px solid #0000001A;
 position: absolute; 
-margin-top: 58px;
 gap: 4px;
 background-color: white;
 }
@@ -47,7 +46,11 @@ gap: 8px;
   justify-content: space-between;
 }
 
+.basicStyle{
+  display: "flex";
+  flex-direction: "row-reverse" ;
 
+}
 
 
 
