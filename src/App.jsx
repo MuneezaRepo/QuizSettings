@@ -1,16 +1,9 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
-
 import "./App.css";
-import CreatingQuiz from "./component/CreatingQuiz";
-import Header from "./component/Header";
-
-
 import { useEffect, useState } from "react";
-import MCQDetails from "./component/MCQDetails.jsx";
-import ButtonSwitching from "./component/ButtonSwitching.jsx";
-import ButtonDifficulty from "./component/ButtonDifficulty.jsx";
-import JustCheck from "./component/JustCheck.jsx";
+import AllMCQs from "./component/AllMCQs";
+import SettingQuizMainScreen from "./component/SettingQuizMainScreen";
+
 
 
 const App = () => {
@@ -30,22 +23,13 @@ const App = () => {
 
 
   const router = createBrowserRouter([
-    // {path: '/', element: <CreatingQuiz  quiz={quiz} setQuiz={setQuiz} />},
-    // {path: '/', element: </>},
-    // {path: '/addingQuestions', element: <MCQDetails allMCQs={allMCQs} setAllMCQs={setAllMCQs}/>}
-    {path: '/', element: <MCQDetails />}
-
+    {path: '/', element: <SettingQuizMainScreen quiz={quiz} setQuiz={setQuiz}/>},
+    {path: '/addingQuestions', element: <AllMCQs  quiz={quiz} setQuiz={setQuiz}/>}
   ])
   
-
   return (
     <>
-    <RouterProvider router={router}/>
-    
-        {/* <Header setQuiz /> */}
-        {/* <CreatingQuiz quiz={quiz} setQuiz={setQuiz} /> */}
-        {/* <MCQDetails /> */}
-    
+    <RouterProvider router={router}/> 
     </>
   );
 };

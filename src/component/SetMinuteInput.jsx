@@ -1,8 +1,17 @@
-import React, { useState } from "react";
-import "../styling/setMInuteInput.css";
+import React, { useState, useEffect } from "react";
 
-const SetMinuteInput = ({ setQuiz }) => {
-  const [minutes, setMinutes] = useState("");
+import "../styling/setMInuteInput.css";
+import { useSelector } from "react-redux";
+
+const SetMinuteInput = ({ setQuiz, quiz }) => {
+  const [minutes, setMinutes] = useState();
+  const time = useSelector((state) => state.myReducer.quiz.minutes);
+
+  useEffect(() => {
+    if (time !== undefined && time !== minutes) {
+      setMinutes(time);
+    }
+  }, [time, minutes]);
 
   const handleInputChange = (event) => {
     const newMinutes = event.target.value;
@@ -27,7 +36,7 @@ const SetMinuteInput = ({ setQuiz }) => {
             type="number"
             value={minutes}
             onChange={handleInputChange}
-          />
+          ></input>
         </label>
       </div>
     </>

@@ -39,7 +39,18 @@ const DownArrow = () => (
   </svg>
 );
 
-const ASDropdown = ({onOptionChange, quiz, setQuiz, options,label,selectedOptionField ,dropdownOptionsList,dropdownInsideContent,basicStyle}) => {
+const ASDropdown = ({
+  onOptionChange,
+  quiz,
+  setQuiz,
+  options,
+  label,
+  selectedOptionField,
+  dropdownOptionsList,
+  dropdownInsideContent,
+  basicStyle,
+  statusValue,
+}) => {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [showOption, setShowOptions] = useState(false);
 
@@ -48,50 +59,49 @@ const ASDropdown = ({onOptionChange, quiz, setQuiz, options,label,selectedOption
     setShowOptions(false);
     // onOptionChange(option);
 
-    
     // setQuiz((prevQuiz) => ({
     //   ...prevQuiz,
-    //   selectedOption: option, 
+    //   selectedOption: option,
     // }));
     if (onOptionChange) {
       onOptionChange(option);
     } else {
       setQuiz((prevQuiz) => ({
         ...prevQuiz,
-        selectedOption: option
+        selectedOption: option,
       }));
     }
-
-
-
   };
 
   return (
-    <div >
+    <div>
       <label htmlFor="options">{label}</label>
-      <div  className={basicStyle}>
-       
+      <div className={basicStyle}>
         <div
           id="options"
           onClick={() => {
             setShowOptions((pre) => !pre);
           }}
-          // className="dropdownField"
-           className={selectedOptionField}
+          className={selectedOptionField}
         >
-          <div style={{ padding: "5px" }}>{selectedOption}</div>
+          <div style={{ padding: "5px" }}>
+            {statusValue ? (
+              <div>{statusValue}</div>
+            ) : (
+              <div>{selectedOption}</div>
+            )}
+          </div>
+
           <div style={{ padding: "5px" }}>
             {showOption ? <UpArrow /> : <DownArrow />}
           </div>
         </div>
 
         {showOption && (
-          <div  className={dropdownOptionsList}>
-            {/* className="dropdownList"*/}
+          <div className={dropdownOptionsList}>
             {options.map((option) => (
               <div
-                key={option} // Assign a unique key to each option
-                // className="insideDropdownListContent"
+                key={option}
                 className={dropdownInsideContent}
                 onClick={() => {
                   handleOptionClick(option);

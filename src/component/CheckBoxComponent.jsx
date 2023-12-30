@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
 import "../styling/checkbox.css";
-const CheckBoxComponent = ({ text, componentAsProp, handleuffel ,constumStyle,classNameInside,isPaddingAdded}) => {
-  // console.log(constumStyle);
+const CheckBoxComponent = ({
+  text,
+  componentAsProp,
+  handleuffel,
+  constumStyle,
+}) => {
+  
   const [checked, setChecked] = useState(false);
+  
+    const textWithUnderscores = text.replace(/ /g, "_");
+    
   useEffect(() => {
-    handleuffel(text, checked);
+    handleuffel(textWithUnderscores, checked);
   }, [checked]);
   return (
-    // <div className={constumStyle?constumStyle:''} style={isPaddingAdded?{padding:'20px 0px'}:{}}>
-      <div>
-      {/* <div className={`${classNameInside}  chkboxContent`}> */}
-      <div className={constumStyle?constumStyle:''}>
-      <label className="chkboxText">
-        <input
-          className="chkBox"
-          type="checkbox"
-          onChange={() => setChecked(!checked)}
-          checked={checked}
-        />
-        {text}
-      </label>
+    <div>
+      <div className={constumStyle ? constumStyle : ""}>
+        <label className="chkboxText">
+          <input
+            className="chkBox"
+            type="checkbox"
+            onChange={() => setChecked(!checked)}
+            checked={checked}
+          />
+          {text}
+        </label>
       </div>
-  
 
       {checked && (
         <div>

@@ -10,8 +10,6 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
     setQuiz((pre) => ({ ...pre, [name]: value }));
   };
 
-
-
   const handleRadioButton = (selectedText) => {
     text.map((nn) => {
       setQuiz((pre) => {
@@ -28,7 +26,7 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
     });
   };
   return (
-    <div  style={{paddingBottom:'10px'}}>
+    <div style={{ paddingBottom: "10px" }}>
       <div>
         <RadioButtonComponent
           text={text}
@@ -42,12 +40,9 @@ const TimeSettings = ({ checkboxesProp, setQuiz, quiz, text }) => {
         text={"Do you want to set this time for all questions"}
         handleuffel={handleuffel}
       />
-      
-    
-      
-      
+
       <CheckBoxComponent
-       constumStyle="customBackground"
+        constumStyle="customBackground"
         text={checkboxesProp}
         handleuffel={handleuffel}
         componentAsProp={

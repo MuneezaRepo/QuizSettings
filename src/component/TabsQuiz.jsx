@@ -1,23 +1,13 @@
 import "../styling/tabsQuiz.css";
 import { useEffect, useState } from "react";
 
-export default function TabsQuiz({  setQuiz ,tabs = [] }) {
-  const [tabIndex,setTabIndex] = useState(0);
-  // const tabIndex = useSelector((state) => state.myReducer.tabIndex);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   // Save to local storage whenever the Redux value changes
-  //   localStorage.setItem("storedValue", JSON.stringify(tabIndex));
-  //   console.log("inside useeffect", localStorage.tabIndex);
-  // }, [tabIndex]);
+export default function TabsQuiz({ setQuiz, tabs = [] }) {
+  const [tabIndex, setTabIndex] = useState(0);
 
   const activateTab = (index) => {
-   
-    const newTabIndex = index
-    setTabIndex(newTabIndex)
+    const newTabIndex = index;
+    setTabIndex(newTabIndex);
     setQuiz((pre) => ({ ...pre, tabIndex: newTabIndex }));
-
   };
   console.log(tabs[tabIndex].name);
 

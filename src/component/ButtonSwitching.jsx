@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import "../styling/buttonSwitching.css";
 
-const ButtonSwitching = () => {
-  const [isMultiSelected, setIsMultiSelected] = useState(false);
 
-  const handleMultiSelectClick = () => {
-    setIsMultiSelected(true);
-  };
+  const ButtonSwitching = ({ isMultiSelected, handleMultiSelectClick, handleSingleSelectClick }) => {
 
-  const handleSingleSelectClick = () => {
-    setIsMultiSelected(false);
-  };
 
   return (
     <div className="buttonContainer">

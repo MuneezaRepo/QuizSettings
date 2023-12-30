@@ -1,6 +1,5 @@
 import React from "react";
-import "../styling/radioButton.css"
-
+import "../styling/radioButton.css";
 
 const RadioButtonComponent = ({
   text,
@@ -15,7 +14,7 @@ const RadioButtonComponent = ({
   return (
     <div>
       {text.map((text, index) => (
-        <div key={index} style={{display:'flex'}}>
+        <div key={index} style={{ display: "flex" }}>
           <label className="radioButtonText">
             <input
               className="radioButtonIcon"
@@ -26,18 +25,8 @@ const RadioButtonComponent = ({
             {text}
           </label>
           {quiz[text] && <div>{componentAsProp}</div>}
-          {/* {quiz[text] && componentAsProp[index] && (
-            <div>{componentAsProp[index]}</div>
-          )} */}
-
-      
-
-
-
         </div>
       ))}
-
-   
     </div>
   );
 };

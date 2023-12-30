@@ -1,4 +1,4 @@
-import React, {  useEffect } from "react";
+import React, { useEffect } from "react";
 import "../styling/creatingQuiz.css";
 import quizHeaderCross from "../assets/x.svg";
 import TabsQuiz from "./TabsQuiz";
@@ -9,38 +9,38 @@ import ShuffleSettingsDropdown from "./ShuffleSettingsDropdown";
 import FeedbackSettingsDropdown from "./FeedbackSettingsDropdown";
 import AttemptSettingsComponent from "./AttemptSettingsComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { createQuiz, getQuiz, setQUizstate} from "../store/reducerSlice";
+import { createQuiz, getQuiz } from "../store/reducerSlice";
 import TimeSettings from "./TimeSettings";
 import MCQDetails from "./MCQDetails";
 
-import { Link ,useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
-
-const CreatingQuiz = ( {quiz, setQuiz }) => {
-  
+const CreatingQuiz = ({ quiz, setQuiz }) => {
   const ahdjkl = useSelector((state) => state.myReducer.quiz);
   console.log(ahdjkl, "ahdjkl");
   const dropdownComponents = {
-    GeneralInfo: <GeneralInfo quiz={quiz} setQuiz={setQuiz}/>,
+    GeneralInfo: <GeneralInfo quiz={quiz} setQuiz={setQuiz} />,
     ShuffleSettings: (
       <ShuffleSettingsDropdown
         checkboxesProp={["Shuffle Answers", "Shuffle Questions"]}
         quiz={quiz}
         setQuiz={setQuiz}
       />
-    
     ),
     FeedbackSettings: (
       <FeedbackSettingsDropdown
         checkboxesProp={" Let students see their responses"}
-        text={["Only once after each attempt","Lets student see their current answer"]}
+        text={[
+          "Only once after each attempt",
+          "Lets student see their current answer",
+        ]}
         quiz={quiz}
         setQuiz={setQuiz}
       />
     ),
     AttemptSettings: (
       <AttemptSettingsComponent
-        checkboxesProp={"Allow multiple Attempts" }
+        checkboxesProp={"Allow multiple Attempts"}
         quiz={quiz}
         setQuiz={setQuiz}
       />
@@ -48,7 +48,7 @@ const CreatingQuiz = ( {quiz, setQuiz }) => {
     TimeSettings: (
       <TimeSettings
         checkboxesProp={"Show one question at a time"}
-        text={["Total Quiz Time","Per Question Time"]}
+        text={["Total Quiz Time", "Per Question Time"]}
         quiz={quiz}
         setQuiz={setQuiz}
       />
@@ -74,8 +74,7 @@ const CreatingQuiz = ( {quiz, setQuiz }) => {
     },
     {
       name: "Adding Questions",
-      content: <MCQDetails />
-      // content: "Adding Questions content",
+      content: <MCQDetails />,
     },
     {
       name: "Pricing",
@@ -90,11 +89,9 @@ const CreatingQuiz = ( {quiz, setQuiz }) => {
   const dispatch = useDispatch();
   const history = useNavigate();
   const handleSaveClick = () => {
-    // setQuiz((pre) => ({ ...pre, tabIndex: 1 }));
     dispatch(createQuiz(quiz));
-    
-    // setTabIndex(1);
-    history('/addingQuestions');
+
+    history("/addingQuestions");
   };
 
   return (
@@ -102,22 +99,21 @@ const CreatingQuiz = ( {quiz, setQuiz }) => {
       <div className="creatingquizHeader">
         <div className="quizHeaderContainer">
           <img className="imageQuizBack" src={quizHeaderCross} />
-          <span className="quizHeaderText"> Creating Quiz</span>
+          <span className="quizHeaderText"> {quiz.title}</span>
         </div>
       </div>
       <div className="quizTab">
-        <TabsQuiz tabs={tabs} setQuiz={setQuiz}/>
+        <TabsQuiz tabs={tabs} setQuiz={setQuiz} />
       </div>
       <div>
-       
-      
-         <Button text="Reset All" variant="white"  /> 
-         <Button variant= "green" text= "Save & Continue" onClick={handleSaveClick} /> 
-         
-
+        <Button text="Reset All" variant="white" />
+        <Button
+          variant="green"
+          text="Save & Continue"
+          onClick={handleSaveClick}
+        />
       </div>
     </div>
   );
 };
 export default CreatingQuiz;
-
